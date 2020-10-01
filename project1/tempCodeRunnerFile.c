@@ -1,1 +1,5 @@
-        sscanf(buffer, "%d, %d, %d", &r, &g, &b);
+   // char buffer[20];
+    // while (fscanf(stream, "%s", buffer) == 1) // expect 1 successful conversion
+    // {
+    // // process buffer
+    // }
