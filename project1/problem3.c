@@ -1,4 +1,5 @@
-// implement your program here
+// Author: Haoyang Cai (hc2283)
+// Purpose: split integer into two
 
 #include<stdio.h>
 #include<stdlib.h>

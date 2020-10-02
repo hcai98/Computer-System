@@ -1,5 +1,5 @@
-
-// implement your program here
+// Author: Haoyang Cai (hc2283)
+// Purpose: read the three values representing the three separate colors and produce a single hexadecimal value.
 
 #include<stdio.h>
 #include<stdlib.h>

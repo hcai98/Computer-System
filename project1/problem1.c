@@ -1,6 +1,5 @@
 // Author: Haoyang Cai (hc2283)
-
-// implement your program here
+// Purpose:  convert date/time specification from multi-integer human readable format to a single integers
 #include<stdio.h>
 #include<stdlib.h>
 #include <string.h>
