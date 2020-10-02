@@ -70,7 +70,7 @@ int main(){
         mo1 = (month % 10) << 26;
         mo2 = (month / 10) << 30;
 
-        printf("time: %d\n", s1 + s2 + m1 + m2 + h1 + h2 + d1 + d2 + mo1 + mo2);
+        printf("%d\n", s1 + s2 + m1 + m2 + h1 + h2 + d1 + d2 + mo1 + mo2);
     }
 
     return 0;

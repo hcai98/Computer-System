@@ -26,7 +26,6 @@ int main() {
 
     // Initialize values
     int r, g, b;
-    int hex_value = 0;
     int i;
     for (i = 0; i < num_lines; i++) {
         

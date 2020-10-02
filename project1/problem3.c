@@ -4,22 +4,18 @@
 #include<stdlib.h>
 #include <string.h>
 
-
+// input parameter: 1. number to split 2. address of a 3. address of b
 int split(int num, int *aa, int *bb){
 
-    int a, b;
-    int zeroBit;
-    int isAddToA;
-    int mask = 1;
-    int counter_current_bit;
+    int a = 0, b = 0; // arrays to store splitted values temporarily
+    int zeroBit; // temp value to store the 0 bit of num after shifting
+    int isAddToA = 1; // check whether add to a or b
+    int counter_current_bit = 0; // log where to put the 1 detected
 
-    isAddToA = 1;
-    counter_current_bit = 0;
-    a = 0; b = 0;
     while (num != 0) { // iterate though bits of the number until it is zero
         zeroBit = num & 0b1; // use mask to get current right-most bit
 
-        if (zeroBit == 1) {
+        if (zeroBit == 1) { 
             if (isAddToA) {
                 a = a | (1 << counter_current_bit);
                 isAddToA = 0;
@@ -27,13 +23,13 @@ int split(int num, int *aa, int *bb){
                 b = b | (1 << counter_current_bit);
                 isAddToA = 1;
             }
-            
         }
         
-        num = num >> 1; // Shift bit
+        num = num >> 1; // shift bit
         counter_current_bit ++;
     }
 
+    // pass values of a and b to main by reference
     *aa = a;
     *bb = b;
 
@@ -42,9 +38,7 @@ int split(int num, int *aa, int *bb){
 }
 
 
-
 int main() {
-
 
     // Open file
     FILE *ifp; 
@@ -57,23 +51,27 @@ int main() {
         exit(1);
     }
 
-    // char buffer[20];
-    // while (fscanf(stream, "%s", buffer) == 1) // expect 1 successful conversion
-    // {
-    // // process buffer
-    // }
+    // Initialize variables
+    int num, a, b;
 
+    // start iteration
+    while (!feof(ifp)) {
 
-    int num = 6;
-    int a; 
-    int b;
+        // read input
+        fscanf(ifp, "%d", &num);
 
-    split(num, &a, &b);
+        // check exit condition
+        if (num == 0){break;}
 
-    
-    printf("a: %i\n", a);
-    printf("b: %i\n", b);
+        // split num into a and b
+        split(num, &a, &b);
 
+        // output values
+        printf("%d %d\n", a, b);
+    }
+
+    // close file
+    fclose(ifp);
 
     return 0;
 
