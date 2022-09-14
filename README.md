@@ -1,1 +1,3 @@
-# Fall2020_CSO
+# Computer System Organization (Fall 2020)
+
+Homework, Projects, C Programming
